@@ -1,5 +1,8 @@
 <h1>My To-Do list</h1>
 <%= link_to '+ Create new task', todos_new_path, class:'btn btn-link' %>
 <% @todos.each do |todo| %>
-<div class="well"><%= todo.description %></div>
+<div class="well">
+  <%= todo.description %>
+  <%= link_to 'Show', todo, class:'btn btn-info' %>
+</div>
 <% end %>
