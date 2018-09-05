@@ -1,7 +1,13 @@
 <div class="well">
-  <%= todo.description %>
-  <%= link_to 'Mark task', todos_complete_path(id: todo), class:'btn btn-success' %>
-  <%= link_to 'Show', todo, class:'btn btn-info' %>
-  <%= link_to 'Edit', todos_edit_path(id: todo), class:'btn btn-warning' %>
-  <%= link_to 'Remove', todo, method: :delete, class:'btn btn-danger' %>
+  <div>
+    <span class="left">
+      <%= todo.description %>
+    </span>
+    <span class="right">
+      <%= link_to 'Mark task', todos_complete_path(id: todo), class:'btn btn-success' %>
+      <%= link_to 'Show', todo, class:'btn btn-info' %>
+      <%= link_to 'Edit', todos_edit_path(id: todo), class:'btn btn-warning' %>
+      <%= link_to 'Remove', todo, method: :delete, class:'btn btn-danger' %>
+    </span>
+  </div>
 </div>
