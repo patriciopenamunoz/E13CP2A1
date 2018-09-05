@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-6">
+      <h1>Unfinished tasks</h1>
+      <% @unfinished.each do |unfinished| %>
+        <%= render 'well', todo: unfinished %>
+      <% end %>
+  </div>
+  <div class="col-xs-6">
+    <h1>Completed tasks</h1>
+    <% @finished.each do |finished| %>
+      <%= render 'well', todo: finished %>
+    <% end %>
+  </div>
+</div>

@@ -42,6 +42,11 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+  def list
+    @unfinished = Todo.where completed: false
+    @finished = Todo.where completed: true
+  end
+
   private
 
   def todo_params
