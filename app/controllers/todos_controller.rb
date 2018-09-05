@@ -19,6 +19,10 @@ class TodosController < ApplicationController
     @status = @todo.completed ? completed : unfinished
   end
 
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
   private
 
   def todo_params

@@ -4,5 +4,6 @@
 <div class="well">
   <%= todo.description %>
   <%= link_to 'Show', todo, class:'btn btn-info' %>
+  <%= link_to 'Edit', todos_edit_path(id: todo), class:'btn btn-warning' %>
 </div>
 <% end %>
