@@ -4,7 +4,14 @@
       <%= todo.description %>
     </span>
     <span class="right">
-      <%= link_to 'Mark task', todos_complete_path(id: todo), class:'btn btn-success' %>
+      <% if !todo.completed %>
+      <%= link_to todos_complete_path(id: todo),
+                  class:'btn btn-success',
+                  title: 'Mark this task as completed',
+                  'data-toggle' => 'tooltip' do %>
+        <span class="glyphicon glyphicon-ok"></span>
+      <% end %>
+      <% end %>
 
       <%= link_to todo, class: 'btn btn-info',
                         title: 'Show',
