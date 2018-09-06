@@ -4,5 +4,9 @@
   Status:
   <span class="<%= @status[:bg] %>"> <%= @status[:txt] %> </span>
 </div>
+<% if !@todo.completed %>
+  <%= link_to 'Mark this task as completed', todos_complete_path(@todo),
+                                             class:'btn btn-success' %>
+<% end %>
 <%= link_to 'Edit this task', todos_edit_path(@todo), class:'btn btn-warning' %>
 <%= link_to 'Remove this task', @todo, method: :delete, class:'btn btn-danger' %>
