@@ -5,9 +5,24 @@
     </span>
     <span class="right">
       <%= link_to 'Mark task', todos_complete_path(id: todo), class:'btn btn-success' %>
-      <%= link_to 'Show', todo, class:'btn btn-info' %>
-      <%= link_to 'Edit', todos_edit_path(id: todo), class:'btn btn-warning' %>
-      <%= link_to 'Remove', todo, method: :delete, class:'btn btn-danger' %>
+
+      <%= link_to todo, class: 'btn btn-info',
+                        title: 'Show',
+                        'data-toggle' => 'tooltip' do %>
+      <span class="glyphicon glyphicon-eye-open"></span>
+      <% end %>
+
+      <%= link_to todos_edit_path(id: todo), class:'btn btn-warning',
+                                             title: 'Edit',
+                                             'data-toggle' => 'tooltip' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+
+      <%= link_to todo, method: :delete, class:'btn btn-danger',
+                                         title: 'Remove',
+                                         'data-toggle' => 'tooltip' do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
     </span>
   </div>
 </div>
