@@ -1,4 +1,8 @@
 <h1>Task information</h1>
-<h2><%= @todo.description %></h2>
-Status:
-<span class="<%= @status[:bg] %>"> <%= @status[:txt] %> </span>
+<h2>Description: <%= @todo.description %></h2>
+<div class="status">
+  Status:
+  <span class="<%= @status[:bg] %>"> <%= @status[:txt] %> </span>
+</div>
+<%= link_to 'Edit this task', todos_edit_path(@todo), class:'btn btn-warning' %>
+<%= link_to 'Remove this task', @todo, method: :delete, class:'btn btn-danger' %>
